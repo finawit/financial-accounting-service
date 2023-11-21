@@ -1,0 +1,7 @@
+
+n
+java:S22595"L"NullPointerException" will be thrown when invoking method "getErrorCode()".(¾—ğŠşÿÿÿÿ8„Â²1
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÃÂí¹8„Â²1
+o
+java:S62040"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8‘„Â²1

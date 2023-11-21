@@ -1,0 +1,46 @@
+server:
+  port: 8000
+# Enable the endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+spring:
+  messages:
+    basename: i18n/financial-accounting-messages,i18n/base-messages,i18n/chart-of-account-messages
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8083/auth/realms/sina
+      client:
+        provider:
+          sina:
+            issuer-uri: http://localhost:8083/realms/sina
+keycloak:
+  enabled: true
+
+app:
+  hikari:
+    main-data-source:
+      username: admin
+      password: admin
+      driverClassName: org.h2.Driver
+      jdbcUrl: jdbc:h2:mem:financialAccounting
+    report-data-source:
+      username: admin
+      password: admin
+      driverClassName: org.h2.Driver
+      jdbcUrl: jdbc:h2:mem:financialAccounting_report
+
+logging:
+  level:
+    org.springframework.security: debug
+    org.keycloak: debug
+    org:
+      springframework:
+        jdbc:
+          datasource: debug
+
